@@ -9,11 +9,11 @@ const { IndexApi, NotFoundApi } = require("./src/index/index.js");
 const cors = require("cors");
 
 const app = express();
+app.use(cors());
 dotenv.config();
 const client = new OAuth2Client(process.env.REACT_APP_GOOGLE_CLIENT_ID);
 
 app.use(express.json());
-app.use(cors());
 
 IndexApi(app);
 ProductsAPI(app);
