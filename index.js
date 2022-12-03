@@ -13,8 +13,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-IndexApi(app);
 AuthAPI(app);
+IndexApi(app);
 ProductsAPI(app);
 UsersAPI(app);
 NotFoundApi(app);
