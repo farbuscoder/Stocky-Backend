@@ -4,6 +4,7 @@ const debug = require("debug")("app:server");
 const { Config } = require("./src/config/index.js");
 const { ProductsAPI } = require("./src/products/index");
 const { UsersAPI } = require("./src/users/index");
+const { AuthAPI } = require("./src/auth/index");
 const { IndexApi, NotFoundApi } = require("./src/index/index.js");
 const cors = require("cors");
 
@@ -13,6 +14,7 @@ app.use(express.json());
 app.use(cors());
 
 IndexApi(app);
+AuthAPI(app);
 ProductsAPI(app);
 UsersAPI(app);
 NotFoundApi(app);
